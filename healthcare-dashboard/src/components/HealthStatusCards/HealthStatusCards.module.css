@@ -1,0 +1,72 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Arbitrary gap value */
+  padding: 8px; /* Added later for visual breathing room */
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  position: relative;
+  border-left: 4px solid transparent; /* For status indicator */
+}
+
+/* Status-specific styles - colors could be variables */
+.card.healthy {
+  border-left-color: #4CAF50;
+}
+
+.card.warning {
+  border-left-color: #FFC107;
+}
+
+.card.critical {
+  border-left-color: #F44336;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px; /* Eyeballed value */
+}
+
+.cardIcon {
+  font-size: 24px; /* Too large but looks okay */
+  margin-right: 12px;
+  line-height: 1; /* Fixes vertical alignment */
+}
+
+.cardTitle {
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+  font-weight: 600;
+}
+
+.cardDate {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px; /* Inconsistent with cardHeader margin */
+}
+
+.cardStatus {
+  font-size: 13px;
+  font-weight: 500;
+  padding-top: 4px;
+  border-top: 1px dashed #eee; /* Quick separator */
+}
+
+/* Human would add these last-minute responsive fixes */
+@media (max-width: 768px) {
+  .card {
+    padding: 12px;
+  }
+  
+  .cardIcon {
+    font-size: 20px; /* Slightly smaller on mobile */
+  }
+}

@@ -1,0 +1,86 @@
+/* src/App.module.css */
+.app {
+  /* No styling here - human forgot to add it */
+}
+
+.mainLayout {
+  display: flex;
+  min-height: calc(100vh - 72px); /* Header height */
+  position: relative;
+}
+
+.contentArea {
+  flex-grow: 1;
+  padding: 24px;
+  margin-left: 240px; /* Sidebar width */
+  background: #f5f7fa;
+  overflow-x: hidden; /* Quick fix for horizontal scroll */
+}
+
+.topRow {
+  margin-bottom: 24px;
+}
+
+.middleRow {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.anatomyWrapper {
+  flex: 2;
+}
+
+.statusCardsWrapper {
+  flex: 1;
+  min-width: 300px; /* Prevent squeezing */
+}
+
+.bottomRow {
+  display: flex;
+  gap: 24px;
+}
+
+.calendarSection {
+  flex: 2;
+}
+
+.rightSections {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 320px; /* Magic number */
+}
+
+/* Last-minute responsive fixes */
+@media (max-width: 1200px) {
+  .middleRow {
+    flex-direction: column;
+  }
+  
+  .anatomyWrapper, 
+  .statusCardsWrapper {
+    flex: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .bottomRow {
+    flex-direction: column;
+  }
+  
+  .calendarSection,
+  .rightSections {
+    flex: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .contentArea {
+    margin-left: 0;
+    padding: 16px;
+  }
+  
+  /* Sidebar would be toggled in a real app */
+}
