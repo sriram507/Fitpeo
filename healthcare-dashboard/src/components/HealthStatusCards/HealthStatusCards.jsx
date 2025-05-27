@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './HealthStatusCards.module.css';
-// Not using TypeScript even though the project supports it
+
 function HealthStatusCards() {
   const cards = [
     { 
@@ -8,7 +8,7 @@ function HealthStatusCards() {
       title: 'Lungs', 
       date: 'Oct 20, 2021', 
       status: 'critical',
-      icon: '🫁' // Using emoji instead of icon library
+      icon: '🫁'
     },
     { 
       id: 2, 
@@ -27,22 +27,23 @@ function HealthStatusCards() {
   ];
 
   return (
-    <div className={styles.container}>
-      {cards.map(card => (
-        <div key={card.id} className={`${styles.card} ${styles[card.status]}`}>
-          <div className={styles.cardHeader}>
-            <span className={styles.cardIcon}>{card.icon}</span>
-            <h4 className={styles.cardTitle}>{card.title}</h4>
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        {cards.map(card => (
+          <div key={card.id} className={`${styles.card} ${styles[card.status]}`}>
+            <div className={styles.cardHeader}>
+              <span className={styles.cardIcon}>{card.icon}</span>
+              <h4 className={styles.cardTitle}>{card.title}</h4>
+            </div>
+            <div className={styles.cardDate}>{card.date}</div>
+            <div className={styles.cardStatus}>
+              {card.status === 'healthy' && 'All good'}
+              {card.status === 'warning' && 'Needs checkup'}
+              {card.status === 'critical' && 'Requires attention'}
+            </div>
           </div>
-          <div className={styles.cardDate}>{card.date}</div>
-          {/* Human might add this extra div for styling */}
-          <div className={styles.cardStatus}>
-            {card.status === 'healthy' && 'All good'}
-            {card.status === 'warning' && 'Needs checkup'}
-            {card.status === 'critical' && 'Requires attention'}
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

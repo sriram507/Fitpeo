@@ -1,97 +1,83 @@
-/* src/components/AnatomySection/AnatomySection.module.css */
-.container {
-  background: white;
-  border-radius: 10px;
-  padding: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.header {
-  margin-bottom: 20px;
-}
-
-.title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
-  margin: 0 0 4px 0;
-}
-
-.subtitle {
-  font-size: 13px;
-  color: #888;
-}
-
-.anatomyWrapper {
-  position: relative;
+.wrapper {
+  padding: 0 30px 10px 30px; /* Top padding removed for upward shift */
+  font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center;
-  height: 340px; /* Fixed height that might cause issues */
+  flex-direction: column;
+  align-items: flex-start; /* Aligns title and image to the left */
+  margin-bottom: 0; /* Remove gap below section */
 }
+
+.pageTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #003366; /* Dark blue */
+  margin-top: 0px;  /* Pull title even higher */
+  margin-bottom: 8px; /* Reduce bottom spacing */
+  padding-left: 5px; /* Slight left alignment */
+}
+
+.container {
+  position: relative;
+  margin-top: 0;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;      /* Stack children vertically */
+  align-items: flex-start;     /* Align items to the left */
+  padding-bottom: 0;
+}
+
+
 
 .anatomyImage {
-  object-fit: contain;
+  display: block;
+  width: 300px;  /* Smaller size as requested */
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin: 0; /* Remove margin to avoid space */
 }
 
+/* Other styles unchanged */
 .indicator {
   position: absolute;
   display: flex;
   align-items: center;
-  background: white;
-  padding: 6px 10px;
-  border-radius: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  font-size: 13px;
-  z-index: 2;
+  gap: 6px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.indicatorIcon {
-  margin-right: 6px;
+.icon {
   color: #555;
 }
 
-.indicatorText {
-  margin-right: 6px;
-  white-space: nowrap;
+.label {
+  font-weight: bold;
 }
 
-.statusDot {
-  width: 8px;
-  height: 8px;
+.dot {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
 }
 
 .healthy {
-  background: var(--healthy-color);
+  background-color: #4CAF50;
 }
 
 .warning {
-  background: var(--warning-color);
+  background-color: #FFC107;
 }
 
-.critical {
-  background: var(--critical-color);
+.heart {
+  top: 85px;
+  left: 120px;
 }
 
-/* Position indicators manually - human wouldn't use perfect math */
-.heartIndicator {
-  top: 18%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.lungsIndicator {
-  top: 35%;
-  right: 20%;
-}
-
-.toothIndicator {
-  bottom: 25%;
-}
-
-.boneIndicator {
-  bottom: 15%;
-  left: 25%;
+.knee {
+  top: 240px;
+  left: 0px;
 }

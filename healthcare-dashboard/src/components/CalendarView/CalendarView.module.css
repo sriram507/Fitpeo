@@ -1,0 +1,176 @@
+.container {
+  background: white;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  width: 350px;
+  /* no margins needed here */
+}
+
+
+/* .parentWrapper {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+  box-sizing: border-box;
+} */
+
+
+
+
+.parentWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
+
+.parentWrapper {
+  background-color: rgba(255, 0, 0, 0.1);  /* Should stretch across row */
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.monthNavigation {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.monthName {
+  font-size: 15px;
+  font-weight: 500;
+  min-width: 120px;
+  text-align: center;
+}
+
+.navButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.navButton:hover {
+  background: #f5f5f5;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px; /* Increase gap between days */
+  margin-bottom: 20px;
+}
+
+.dayHeader {
+  font-size: 12px; /* Larger day header */
+  padding: 4px 0;
+}
+
+.dateCell {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  padding: 6px; /* Increased padding */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-size: 14px; /* Increase overall font size inside each cell */
+}
+
+.dateCell:hover:not(.empty) {
+  background: #f9f9f9;
+}
+
+.empty {
+  visibility: hidden;
+}
+
+.dateNumber {
+  font-size: 18px; /* Bigger date number */
+  font-weight: 600;
+  margin-bottom: auto;
+}
+
+.appointmentMarkers {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.appointmentDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.appointmentCards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.appointmentCard {
+  border-radius: 8px;
+  padding: 12px;
+  background: #f9f9f9;
+  position: relative;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.cardColorLine {
+  width: 4px;
+  height: 18px;
+  border-radius: 2px;
+  margin-right: 8px;
+}
+
+.cardTitle {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.cardTime {
+  font-size: 13px;
+  color: #555;
+  margin: 0 0 4px 0;
+}
+
+.cardDoctor {
+  font-size: 12px;
+  color: #777;
+  margin: 0;
+}
+
+
+.calendarWrapper {
+  width: 100%;
+}
+
+
+

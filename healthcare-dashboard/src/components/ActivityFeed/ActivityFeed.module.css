@@ -1,0 +1,115 @@
+.container {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.appointmentCount {
+  font-size: 14px;
+  color: #666;
+}
+
+.chartContainer {
+  margin-top: 24px;
+}
+
+.chartGrid {
+  display: flex;
+  height: 180px; /* Fixed height - bad practice */
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px; /* Manual alignment */
+}
+
+.yAxis {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  margin-right: 8px;
+  font-size: 12px;
+  color: #999;
+  padding-top: 10px; /* Eyeballed value */
+}
+
+.barsContainer {
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-end;
+  gap: 12px; /* Arbitrary gap */
+}
+
+.barGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 40px; /* Magic number */
+}
+
+.bar {
+  width: 24px;
+  background: #2a86ff;
+  border-radius: 4px 4px 0 0;
+  transition: height 0.3s ease; /* Only animates height */
+  position: relative;
+}
+
+.bar:hover {
+  background: #1a76ef; /* Manually specified darker shade */
+}
+
+.barValue {
+  position: absolute;
+  top: -24px;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.bar:hover .barValue {
+  opacity: 1;
+}
+
+.dayLabel {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #777;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #666;
+}
+
+.legendColor {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
