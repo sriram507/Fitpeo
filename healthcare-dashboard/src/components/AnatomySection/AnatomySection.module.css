@@ -1,19 +1,47 @@
 .wrapper {
-  padding: 0 30px 10px 30px; /* Top padding removed for upward shift */
+  padding: 0 0 0 40px;
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Aligns title and image to the left */
-  margin-bottom: 0; /* Remove gap below section */
+  align-items: flex-start;
+  margin-bottom: 0;
+  background-color: #FFFFFF;
+  width: 100%;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+  padding-right: 40px;
+}
+
+.searchBar {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  background-color: #fff;
+}
+
+.notificationIcon {
+  font-size: 20px;
+  margin-left: 12px;
+  color: #003366;
+  cursor: pointer;
 }
 
 .pageTitle {
   font-size: 24px;
   font-weight: bold;
-  color: #003366; /* Dark blue */
-  margin-top: 0px;  /* Pull title even higher */
-  margin-bottom: 8px; /* Reduce bottom spacing */
-  padding-left: 5px; /* Slight left alignment */
+  color: #003366;
+  margin-top: 0;
+  margin-bottom: 12px;
+  padding-left: 5px;
 }
 
 .container {
@@ -21,33 +49,30 @@
   margin-top: 0;
   margin-left: 0;
   display: flex;
-  flex-direction: column;      /* Stack children vertically */
-  align-items: flex-start;     /* Align items to the left */
+  flex-direction: column;
+  align-items: flex-start;
   padding-bottom: 0;
 }
 
-
-
 .anatomyImage {
   display: block;
-  width: 300px;  /* Smaller size as requested */
-  height: auto;
+  width: 300px;
+  height: 300px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  margin: 0; /* Remove margin to avoid space */
+  margin: 0;
 }
 
-/* Other styles unchanged */
 .indicator {
   position: absolute;
   display: flex;
   align-items: center;
   gap: 6px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(172, 185, 203, 0.9);
   padding: 4px 8px;
   border-radius: 6px;
   font-size: 14px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px hsla(180, 12%, 76%, 0.1);
 }
 
 .icon {
@@ -73,11 +98,11 @@
 }
 
 .heart {
-  top: 85px;
-  left: 120px;
+  top: 65px;
+  left: 150px;
 }
 
 .knee {
-  top: 240px;
-  left: 0px;
+  top: 200px;
+  left: 20px;
 }

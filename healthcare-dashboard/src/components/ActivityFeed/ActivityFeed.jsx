@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './ActivityFeed.module.css';
 
-// Static data - would normally come from props
+// Static data
 const activityData = {
   totalAppointments: 3,
   weeklyData: [
     { day: 'Mon', value: 1, height: '25%' },
-    { day: 'Tue', value: 0, height: '5%' }, // Not zero to show something
+    { day: 'Tue', value: 0, height: '5%' }, 
     { day: 'Wed', value: 2, height: '50%' },
     { day: 'Thu', value: 1, height: '25%' },
     { day: 'Fri', value: 3, height: '75%' },
@@ -25,10 +25,8 @@ function ActivityFeed() {
         </div>
       </div>
 
-      {/* Manual chart implementation - would use a library in real projects */}
       <div className={styles.chartContainer}>
         <div className={styles.chartGrid}>
-          {/* Y-axis labels - hardcoded */}
           <div className={styles.yAxis}>
             <span>3</span>
             <span>2</span>
@@ -36,18 +34,22 @@ function ActivityFeed() {
             <span>0</span>
           </div>
 
-          {/* Chart bars */}
           <div className={styles.barsContainer}>
             {activityData.weeklyData.map((item, index) => (
               <div key={index} className={styles.barGroup}>
-                <div 
-                  className={styles.bar} 
+                <div className={styles.highlightLineWrapper}>
+                  <div className={styles.solidLine} style={{ backgroundColor: '#1E90FF' }} />
+                  <div className={styles.splitLine}>
+                    <div style={{ backgroundColor: '#1E90FF' }} />
+                    <div style={{ backgroundColor: '#00BFFF' }} />
+                  </div>
+                  <div className={styles.solidLine} style={{ backgroundColor: '#ccc' }} />
+                </div>
+
+                <div
+                  className={styles.bar}
                   style={{ height: item.height }}
-                  // Inline hover effect
-                  onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
-                  onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
                 >
-                  {/* Value tooltip would normally be a proper component */}
                   <div className={styles.barValue}>{item.value}</div>
                 </div>
                 <div className={styles.dayLabel}>{item.day}</div>
@@ -56,11 +58,18 @@ function ActivityFeed() {
           </div>
         </div>
 
-        {/* Legend - hardcoded */}
         <div className={styles.legend}>
           <div className={styles.legendItem}>
             <div className={styles.legendColor} style={{ background: '#2a86ff' }} />
             <span>Appointments</span>
+          </div>
+          <div className={styles.legendItem}>
+            <div className={styles.legendColor} style={{ background: '#1E90FF' }} />
+            <span>Primary</span>
+          </div>
+          <div className={styles.legendItem}>
+            <div className={styles.legendColor} style={{ background: '#00BFFF' }} />
+            <span>Secondary</span>
           </div>
         </div>
       </div>

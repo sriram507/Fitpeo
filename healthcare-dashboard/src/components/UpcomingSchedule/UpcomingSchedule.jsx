@@ -1,4 +1,3 @@
-// src/components/UpcomingSchedule/UpcomingSchedule.jsx
 import React from 'react';
 import { 
   FiCheckCircle, 

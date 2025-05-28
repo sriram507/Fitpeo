@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: flex-start; /* Align to left */
   padding: 20px;
+  background-color: #ffffff; /* Light grayish-blue background */
 }
 
 .title {
@@ -19,21 +20,22 @@
   gap: 12px;
   width: 100%;
   align-items: flex-start;
-  margin-top: 20px;     /* Move down */
-  margin-left: -20px;   /* Move left */
+  margin-top: 30px;     /* Move down */
+  margin-left: 10px;   /* Move left */
   padding: 0 30px;
 }
 
 
 
 .card {
-  background: #fff;
+  background: #F0F8FF;
   border-radius: 8px;
   padding: 16px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   position: relative;
   border-left: 4px solid transparent;
-  width: 100%; /* Make cards take full width under their wrapper */
+  width: 60%;
+  height: 60px;  /* Make cards take full width under their wrapper */
 }
 
 /* Status-specific styles */
@@ -56,26 +58,26 @@
 }
 
 .cardIcon {
-  font-size: 24px;
+  font-size: 20px;
   margin-right: 12px;
   line-height: 1;
 }
 
 .cardTitle {
-  font-size: 16px;
+  font-size: 10px;
   margin: 0;
   color: #333;
   font-weight: 600;
 }
 
 .cardDate {
-  font-size: 13px;
+  font-size: 10px;
   color: #666;
   margin-bottom: 8px;
 }
 
 .cardStatus {
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 500;
   padding-top: 4px;
   border-top: 1px dashed #eee;

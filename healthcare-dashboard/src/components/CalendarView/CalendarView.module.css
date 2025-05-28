@@ -1,39 +1,12 @@
 .container {
   background: white;
   border-radius: 10px;
-  padding: 12px;
+  padding: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  margin-bottom: 20px;
-  width: 350px;
-  /* no margins needed here */
-}
-
-
-/* .parentWrapper {
-  position: relative;
   width: 100%;
-  height: 600px;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 40px;
-  box-sizing: border-box;
-} */
-
-
-
-
-.parentWrapper {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 40px;
+  max-width: 100%;
   box-sizing: border-box;
 }
-
-
-.parentWrapper {
-  background-color: rgba(255, 0, 0, 0.1);  /* Should stretch across row */
-}
-
 
 .header {
   display: flex;
@@ -77,23 +50,29 @@
 .calendarGrid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 6px; /* Increase gap between days */
+  gap: 8px;
   margin-bottom: 20px;
 }
 
 .dayHeader {
-  font-size: 12px; /* Larger day header */
-  padding: 4px 0;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  padding: 6px 0;
+  background: #f0f0f0;
+  border-radius: 4px;
 }
 
 .dateCell {
-  aspect-ratio: 1;
+  min-height: 80px;
   border-radius: 8px;
-  padding: 6px; /* Increased padding */
+  padding: 8px;
   display: flex;
   flex-direction: column;
-  position: relative;
-  font-size: 14px; /* Increase overall font size inside each cell */
+  justify-content: space-between;
+  background: white;
+  font-size: 14px;
+  text-align: center;
 }
 
 .dateCell:hover:not(.empty) {
@@ -105,7 +84,7 @@
 }
 
 .dateNumber {
-  font-size: 18px; /* Bigger date number */
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: auto;
 }
@@ -114,26 +93,47 @@
   display: flex;
   justify-content: center;
   gap: 4px;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .appointmentDot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
+  background-color: #f44336;
 }
 
+/* Highlighted cells for 25–31 */
+.highlightedDate {
+  background-color: #e3f2fd;
+}
+
+/* Selected date 26 */
+.selectedDate {
+  border: 2px solid #2196F3;
+}
+
+/* Highlighted dot for 09:00 AM */
+.highlightedDot {
+  background-color: #483D8B !important;
+  width: 8px;
+  height: 8px;
+}
+
+/* Appointment cards section */
 .appointmentCards {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  display: flex;          /* This enables horizontal layout */
+  gap: 16px;              /* Adds space between the cards */
+  flex-wrap: wrap;        /* Allows wrapping on smaller screens */
 }
 
 .appointmentCard {
+  background: #f9f9f9;
   border-radius: 8px;
   padding: 12px;
-  background: #f9f9f9;
-  position: relative;
+  flex: 1 1 45%;           /* Each card takes up ~45% of container */
+  min-width: 200px;
+  box-sizing: border-box;
 }
 
 .cardHeader {
@@ -167,10 +167,8 @@
   margin: 0;
 }
 
-
-.calendarWrapper {
-  width: 100%;
+/* Highlighted card (Dentist at 09:00) */
+.highlightedCard {
+  background-color: #e3f2fd;
+  border: 1px solid  #483D8B;
 }
-
-
-

@@ -1,46 +1,51 @@
 import React from "react";
 import Header from "./components/Header/Header";
-import styles from "./App.module.css";
 import Sidebar from "./components/Sidebar/Sidebar";
 import AnatomySection from "./components/AnatomySection/AnatomySection";
+import ActivityFeed from "./components/ActivityFeed/ActivityFeed";
 import HealthStatusCards from "./components/HealthStatusCards/HealthStatusCards";
 import CalendarView from "./components/CalendarView/CalendarView";
 import UpcomingSchedule from "./components/UpcomingSchedule/UpcomingSchedule";
-import ActivityFeed from "./components/ActivityFeed/ActivityFeed";
+
+import styles from "./App.module.css";
 
 function App() {
   return (
     <div className={styles.app}>
-      <Header />
+      {/* <Header /> */}
 
       <div className={styles.mainLayout}>
+        {/* Sidebar */}
         <div className={styles.sidebar}>
           <Sidebar />
         </div>
 
+        {/* Main Content */}
         <div className={styles.contentArea}>
-          {/* Middle section: Anatomy + Health Cards + Calendar */}
           <div className={styles.middleRow}>
-            <div className={styles.anatomyWrapper}>
-              <AnatomySection />
-              <HealthStatusCards />
-            </div>
-            <div className={styles.calendarWrapper}>
-              {" "}
-              {/* Neutral outer wrapper */}
-              <div className={styles.parentWrapper}>
-                {" "}
-                {/* This div controls right alignment */}
-                <CalendarView />
+            {/* Left Column: Anatomy & Activity Feed */}
+            <div className={styles.leftColumn}>
+              <div className={styles.anatomySection}>
+                <AnatomySection />
+              </div>
+              <div className={styles.activityFeed}>
+                <ActivityFeed />
               </div>
             </div>
-          </div>
 
-          {/* Right column stack: Schedule & Activity */}
-          <div className={styles.bottomRow}>
-            <div className={styles.rightSections}>
-              <UpcomingSchedule />
-              <ActivityFeed />
+            {/* Middle Column: Health Status Cards */}
+            <div className={styles.healthCards}>
+              <HealthStatusCards />
+            </div>
+
+            {/* Right Column: Calendar & Upcoming Schedule */}
+            <div className={styles.rightColumn}>
+              <div className={styles.calendarView}>
+                <CalendarView />
+              </div>
+              <div className={styles.upcomingSchedule}>
+                <UpcomingSchedule />
+              </div>
             </div>
           </div>
         </div>

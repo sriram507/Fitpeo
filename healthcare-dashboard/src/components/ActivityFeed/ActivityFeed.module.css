@@ -29,10 +29,10 @@
 
 .chartGrid {
   display: flex;
-  height: 180px; /* Fixed height - bad practice */
+  height: 180px;
   border-left: 1px solid #eee;
   border-bottom: 1px solid #eee;
-  padding-bottom: 20px; /* Manual alignment */
+  padding-bottom: 20px;
 }
 
 .yAxis {
@@ -42,14 +42,14 @@
   margin-right: 8px;
   font-size: 12px;
   color: #999;
-  padding-top: 10px; /* Eyeballed value */
+  padding-top: 10px;
 }
 
 .barsContainer {
   display: flex;
   flex-grow: 1;
   align-items: flex-end;
-  gap: 12px; /* Arbitrary gap */
+  gap: 12px;
 }
 
 .barGroup {
@@ -57,19 +57,15 @@
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
-  max-width: 40px; /* Magic number */
+  max-width: 40px;
+  position: relative;
 }
 
 .bar {
   width: 24px;
-  background: #2a86ff;
+  background: #191970;
   border-radius: 4px 4px 0 0;
-  transition: height 0.3s ease; /* Only animates height */
   position: relative;
-}
-
-.bar:hover {
-  background: #1a76ef; /* Manually specified darker shade */
 }
 
 .barValue {
@@ -80,11 +76,6 @@
   font-size: 12px;
   font-weight: 500;
   color: #333;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-.bar:hover .barValue {
   opacity: 1;
 }
 
@@ -94,9 +85,42 @@
   color: #777;
 }
 
+/* Highlight line styles */
+.highlightLineWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4px;
+  margin-bottom: 8px;
+  height: 36px;
+}
+
+/* Solid line */
+.solidLine {
+  width: 6px;
+  height: 100%;
+  border-radius: 2px;
+}
+
+/* Split two-tone line */
+.splitLine {
+  width: 6px;
+  height: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.splitLine div {
+  height: 50%;
+  width: 100%;
+}
+
 .legend {
   display: flex;
   justify-content: center;
+  gap: 16px;
   margin-top: 16px;
 }
 

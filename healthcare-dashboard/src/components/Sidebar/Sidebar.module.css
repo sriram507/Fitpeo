@@ -9,7 +9,8 @@
   padding: 20px 0;
   display: flex;
   flex-direction: column;
-  z-index: 5; /* Arbitrary z-index */
+  z-index: 15;
+  transition: transform 0.3s ease-in-out;
 }
 
 .sidebarHeader {
@@ -26,11 +27,31 @@
   font-weight: 600;
 }
 
+.healthcareTitle {
+  font-size: 22px;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.health {
+  color: #48D1CC;
+}
+
+.care {
+  color: #000080;
+}
+
+.navListWrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .navList {
   list-style: none;
   padding: 0;
   margin: 0;
-  flex-grow: 1;
 }
 
 .navLink {
@@ -63,6 +84,10 @@
   justify-content: center;
 }
 
+.linkText {
+  flex-grow: 1;
+}
+
 .activeIndicator {
   position: absolute;
   right: 0;
@@ -85,4 +110,33 @@
   border-top: 1px solid #f0f0f0;
   font-size: 12px;
   color: #999;
+}
+
+/* Hamburger Menu */
+.menuToggle {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  background: white;
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+  cursor: pointer;
+  display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menuToggle {
+    display: block;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
 }

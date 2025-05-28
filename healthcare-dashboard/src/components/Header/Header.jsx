@@ -38,7 +38,6 @@ function Header(props) {
             width={32}
             height={32}
           />
-          <span className={styles.userName}>Dr. Sarah</span>
         </div>
 
         {/* Add button with manual margin */}
