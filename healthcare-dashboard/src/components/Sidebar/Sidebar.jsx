@@ -41,7 +41,7 @@ function Sidebar() {
         <div className={styles.sidebarHeader}>
           <h2 className={styles.healthcareTitle}>
             <span className={styles.health}>Health</span>
-            <span className={styles.care}>care</span>
+            <span className={styles.care}>care.</span>
           </h2>
           <h3 className={styles.sidebarTitle}>General</h3>
         </div>

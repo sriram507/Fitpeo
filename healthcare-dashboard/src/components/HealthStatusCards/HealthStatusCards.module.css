@@ -20,8 +20,8 @@
   gap: 12px;
   width: 100%;
   align-items: flex-start;
-  margin-top: 30px;     /* Move down */
-  margin-left: 10px;   /* Move left */
+  margin-top: 15px;     /* Move down */
+  margin-left: 0px;   /* Move left */
   padding: 0 30px;
 }
 
