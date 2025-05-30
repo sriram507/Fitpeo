@@ -1,80 +1,46 @@
-// No change in imports or other content...
 import React from 'react';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FiChevronLeft, FiChevronRight, FiPlus } from 'react-icons/fi';
+import { FaUserMd } from 'react-icons/fa';
 import styles from './CalendarView.module.css';
 
-const currentMonth = {
-  name: 'October 2021',
-  days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-  dates: [25, 26, 27, 28, 29, 30, 31]
-};
+const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+const dates = [25, 26, 27, 28, 29, 30, 31];
 
-const appointments = {
-  12: ['09:00', '13:00'],
-  15: ['11:00'],
-  20: ['15:00'],
-  26: ['09:00']
-};
-
-const highlightDates = [25, 26, 27, 28, 29, 30, 31];
+const schedule = [
+  ['10:00', '08:00', '12:00', '10:00', '-',     '12:00', '09:00'],
+  ['11:00', '09:00', '-',      '11:00', '14:00', '14:00', '10:00'],
+  ['12:00', '10:00', '13:00',  '-',     '16:00', '15:00', '11:00'],
+];
 
 function CalendarView() {
-  const weeks = [];
-  let week = [];
-
-  currentMonth.dates.forEach((date, index) => {
-    week.push(date);
-    if (week.length === 7 || index === currentMonth.dates.length - 1) {
-      weeks.push(week);
-      week = [];
-    }
-  });
-
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h3 className={styles.title}>Calendar</h3>
-        <div className={styles.monthNavigation}>
-          <button className={styles.navButton}><FiChevronLeft size={18} /></button>
-          <span className={styles.monthName}>{currentMonth.name}</span>
-          <button className={styles.navButton}><FiChevronRight size={18} /></button>
+        <h3 className={styles.title}>October 2021</h3>
+        <div className={styles.icons}>
+          <FaUserMd className={styles.icon} />
+          <FiPlus className={styles.icon} />
         </div>
       </div>
 
       <div className={styles.calendarGrid}>
-        {currentMonth.days.map(day => (
-          <div key={day} className={styles.dayHeader}>{day}</div>
+        {days.map((day, i) => (
+          <div key={day} className={`${styles.dayHeader} ${i === 1 ? styles.highlightedDay : ''}`}>
+            <div>{day}</div>
+            <div className={styles.dateNumber}>{dates[i]}</div>
+          </div>
         ))}
 
-        {weeks.map((week, weekIndex) => (
-          <React.Fragment key={weekIndex}>
-            {week.map((date, dayIndex) => {
-              const isHighlighted = highlightDates.includes(date);
-              const isSelectedDate = date === 26;
-
-              return (
-                <div
-                  key={`${weekIndex}-${dayIndex}`}
-                  className={`${styles.dateCell} ${date === null ? styles.empty : ''} ${
-                    isHighlighted ? styles.highlightedDate : ''
-                  } ${isSelectedDate ? styles.selectedDate : ''}`}
-                >
-                  {date && (
-                    <>
-                      <div className={styles.dateNumber}>{date}</div>
-                      <div className={styles.verticalLines}>
-                        <div className={styles.lineFullColor} />
-                        <div className={styles.lineSplitColor} />
-                        <div className={styles.lineGrey} />
-                        <div className={styles.lineFullColor} />
-                      </div>
-                    </>
-                  )}
-                </div>
-              );
-            })}
-          </React.Fragment>
-        ))}
+        {schedule.map((row, rowIndex) =>
+          row.map((time, colIndex) => (
+            <div
+              key={`${rowIndex}-${colIndex}`}
+              className={`${styles.timeSlot} ${colIndex === 1 ? styles.highlightedCell : ''}`}
+            >
+              {time}
+            </div>
+          ))
+        )}
       </div>
 
       <div className={styles.appointmentCards}>

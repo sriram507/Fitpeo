@@ -21,14 +21,14 @@ function AnatomySection() {
         {/* Heart Indicator */}
         <div className={`${styles.indicator} ${styles.heart}`}>
           <FaHeart className={styles.icon} />
-          <span className={styles.label}>Heart</span>
+          <span className={styles.label}>HealthyHeart</span>
           <div className={`${styles.dot} ${styles.healthy}`} />
         </div>
 
         {/* Right Knee Indicator */}
-        <div className={`${styles.indicator} ${styles.knee}`}>
+        <div className={`${styles.indicator} ${styles.Leg}`}>
           <FaBone className={styles.icon} />
-          <span className={styles.label}>Right Knee</span>
+          <span className={styles.label}>Healthy Leg</span>
           <div className={`${styles.dot} ${styles.warning}`} />
         </div>
       </div>

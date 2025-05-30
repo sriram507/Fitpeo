@@ -1,10 +1,10 @@
 .sidebar {
   width: 240px;
-  height: 100vh;
+  height: 98vh;
   position: fixed;
   left: 0;
   top: 0;
-  background: white;
+  background: #F8FAFC;
   border-right: 1px solid #eee;
   padding: 20px 0;
   display: flex;

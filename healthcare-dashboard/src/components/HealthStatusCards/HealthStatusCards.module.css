@@ -1,60 +1,42 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align to left */
+  align-items: flex-start;
   padding: 20px;
-  background-color: #ffffff; /* Light grayish-blue background */
+  background-color: #ffffff;
 }
 
 .title {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 16px;
-  color: #2c3e50; /* Dark blue tone */
+  color: #2c3e50;
 }
-
 
 .container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 32px;
   width: 100%;
   align-items: flex-start;
-  margin-top: 15px;     /* Move down */
-  margin-left: 0px;   /* Move left */
+  margin-top: 15px;
   padding: 0 30px;
 }
 
-
-
 .card {
-  background: #F0F8FF;
+  background: #F8FAFC;
   border-radius: 8px;
   padding: 16px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   position: relative;
   border-left: 4px solid transparent;
   width: 60%;
-  height: 60px;  /* Make cards take full width under their wrapper */
-}
-
-/* Status-specific styles */
-.card.healthy {
-  border-left-color: #4CAF50;
-}
-
-.card.warning {
-  border-left-color: #FFC107;
-}
-
-.card.critical {
-  border-left-color: #F44336;
 }
 
 .cardHeader {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .cardIcon {
@@ -64,14 +46,14 @@
 }
 
 .cardTitle {
-  font-size: 10px;
+  font-size: 14px;
   margin: 0;
   color: #333;
   font-weight: 600;
 }
 
 .cardDate {
-  font-size: 10px;
+  font-size: 12px;
   color: #666;
   margin-bottom: 8px;
 }
@@ -83,10 +65,39 @@
   border-top: 1px dashed #eee;
 }
 
-/* Responsive adjustments */
+/* Progress bar container */
+.progressBar {
+  width: 100%;
+  height: 6px;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Progress bar fill */
+.progressFill {
+  height: 100%;
+  border-radius: 4px;
+}
+
+/* Colors */
+.redBar {
+  background-color: #cb0404;
+}
+
+.skyBlueBar {
+  background-color: #7ae2cf;
+}
+
+.blueBar {
+  background-color: #F97A00;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .card {
     padding: 12px;
+    width: 100%;
   }
 
   .cardIcon {

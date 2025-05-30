@@ -1,9 +1,9 @@
-
 .container {
-  background: white;
+  background: #F8FAFC;
   border-radius: 10px;
   padding: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  color: #402E7A; /* Apply to all by default */
 }
 
 .header {
@@ -21,7 +21,7 @@
 
 .viewAll {
   font-size: 14px;
-  color: #2a86ff;
+  color: #402E7A;
   text-decoration: none;
 }
 
@@ -50,7 +50,13 @@
 .dayName {
   font-size: 15px;
   font-weight: 500;
-  color: #333;
+  color: #402E7A;
+}
+
+/* ❗️ EXCEPTIONS for Thursday and Saturday — reset to default or custom color */
+.dayGroup:nth-child(4) .dayName,
+.dayGroup:nth-child(6) .dayName {
+  color: #333; /* Or whatever default you want for these days */
 }
 
 .dayDate {
@@ -68,18 +74,16 @@
   display: flex;
   align-items: center;
   padding: 12px;
-  background: #f9f9f9;
+  background: #CBDCEB;
   border-radius: 8px;
   position: relative;
-}
-
-.appointmentCard:hover {
-  background: #f0f0f0;
+  color: #402E7A; /* Inherit deep blue */
 }
 
 .appointmentIcon {
   margin-right: 12px;
   font-size: 20px;
+  color: #402E7A;
 }
 
 .appointmentDetails {
@@ -90,12 +94,12 @@
   font-size: 14px;
   font-weight: 500;
   margin: 0 0 2px 0;
-  color: #333;
+  color: #402E7A;
 }
 
 .appointmentTime {
   font-size: 13px;
-  color: #666;
+  color: #402E7A;
   margin: 0;
 }
 

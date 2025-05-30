@@ -18,6 +18,7 @@
 .sidebar {
   width: 220px;
   background: #f8f9fa;
+  padding: 8px;
   flex-shrink: 0;
 }
 
@@ -68,7 +69,7 @@
 .anatomySection {
   flex: 1;
   background-color: #ffffff;
-  padding: 5px;
+  padding: 8px;
   border-radius: 5px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
@@ -77,33 +78,25 @@
   width: 260px;
   flex-shrink: 0;
   background-color: #ffffff;
-  padding: 16px;
+  padding: 8px;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
 .activityFeed {
   background-color: #ffffff;
+  padding: 8px; /* Reduced from 16px */
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-  
-  width: 85%;
-  height: 220px;         /* fixed height */
-  overflow: hidden;      /* prevents scrolling or overflow */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* distributes content vertically */
-  flex-shrink: 0;
+  width: 98%;
 }
-
-
 
 
 /* Right column */
 .rightColumn {
   flex: 1;
   min-width: 300px;
-  max-width: 450px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 0px;
@@ -114,6 +107,8 @@
   min-height: 300px;
   overflow: auto;
   height: 100%;
+  padding: 16px;
+  
 }
 
 .upcomingSchedule {
