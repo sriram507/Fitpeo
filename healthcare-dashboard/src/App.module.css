@@ -1,37 +1,59 @@
 /* Main layout containers */
+/* Ensure full height for root containers */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Your .app styles */
 .app {
   width: 100vw;
-  height: 100vh;
+  height: 100vh; /* Full viewport height */
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: #E9F6FF;
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  max-width: none;
+  justify-content: center; /* center the layoutWrapper horizontally */
+  align-items: stretch; /* fill vertically */
 }
 
-.mainLayout {
+/* layoutWrapper must fill available height */
+.layoutWrapper {
   display: flex;
-  flex: 1;
   width: 100%;
-  min-width: 0;
+  height: 100%;  /* IMPORTANT: fill height inside .app */
+  max-width: 1800px;
+  background: #ffffff;
+  border: 2px solid #ffffff; /* 4-sided border */
+  border-radius: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
+/* Sidebar styling */
 .sidebar {
-  width: 220px;
+  width: 240px;
   background: #f8f9fa;
-  padding: 8px;
+  padding: 20px 0;
+  box-sizing: border-box;
   flex-shrink: 0;
+  border-right: 1px solid #eee; /* subtle internal border for separation */
 }
 
 /* Content wrapper */
 .contentArea {
   flex: 1;
-  width: 100%;
-  padding: 0 48px 24px 48px; /* reduced top padding from 24px to 12px */
-  overflow-y: auto;
-  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 48px 24px 48px;
+  max-height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-/* Max layout width container */
+/* Page wrapper */
 .pageWrapper {
   max-width: 1800px;
   margin: 0 auto;
@@ -46,6 +68,8 @@
   flex: 1;
   width: 100%;
   min-width: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
 /* Left column layout */
@@ -56,13 +80,14 @@
   gap: 10px;
   margin-right: 12px;
   min-width: 0;
+  height: 100%;
+  overflow: auto;
 }
 
 /* Flex row for Anatomy + Health Cards */
 .anatomyAndHealth {
   display: flex;
   flex-direction: row;
-  /* gap: 12px; */
   width: 40%;
 }
 
@@ -81,16 +106,16 @@
   padding: 8px;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  margin-left: 12px; /* spacing */
 }
 
 .activityFeed {
   background-color: #ffffff;
-  padding: 8px; /* Reduced from 16px */
+  padding: 8px;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
   width: 98%;
-}
-
+} 
 
 /* Right column */
 .rightColumn {
@@ -100,7 +125,10 @@
   display: flex;
   flex-direction: column;
   gap: 0px;
+  height: 100%;
+  overflow: auto;
 }
+
 
 .calendarView {
   flex: 1;
@@ -108,7 +136,6 @@
   overflow: auto;
   height: 100%;
   padding: 16px;
-  
 }
 
 .upcomingSchedule {

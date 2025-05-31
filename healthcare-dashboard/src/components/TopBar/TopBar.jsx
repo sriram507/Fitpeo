@@ -7,7 +7,7 @@ function TopBar() {
     <div className={styles.topBar}>
       <input
         type="text"
-        placeholder="Search..."
+        placeholder="Search  "
         className={styles.searchBar}
       />
       <div className={styles.notificationIconWrapper}>

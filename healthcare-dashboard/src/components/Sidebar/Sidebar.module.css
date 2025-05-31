@@ -1,9 +1,7 @@
 .sidebar {
+  /* Removed position fixed */
   width: 240px;
-  height: 98vh;
-  position: fixed;
-  left: 0;
-  top: 0;
+  height: 100%; /* fill parent container height */
   background: #F8FAFC;
   border-right: 1px solid #eee;
   padding: 20px 0;
@@ -34,7 +32,7 @@
 }
 
 .health {
-  color: #48D1CC;
+  color: #7ae2cf;
 }
 
 .care {
