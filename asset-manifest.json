@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/sriram507/Fitpeo/static/css/main.a5b3438f.css",
-    "main.js": "/sriram507/Fitpeo/static/js/main.1c491721.js",
-    "static/js/453.1bdb1478.chunk.js": "/sriram507/Fitpeo/static/js/453.1bdb1478.chunk.js",
-    "static/media/Anatomy.jpg": "/sriram507/Fitpeo/static/media/Anatomy.0abcef7a8b17fb8f6ca4.jpg",
-    "index.html": "/sriram507/Fitpeo/index.html",
-    "main.a5b3438f.css.map": "/sriram507/Fitpeo/static/css/main.a5b3438f.css.map",
-    "main.1c491721.js.map": "/sriram507/Fitpeo/static/js/main.1c491721.js.map",
-    "453.1bdb1478.chunk.js.map": "/sriram507/Fitpeo/static/js/453.1bdb1478.chunk.js.map"
+    "main.css": "/Fitpeo/static/css/main.a5b3438f.css",
+    "main.js": "/Fitpeo/static/js/main.3bc5e28e.js",
+    "static/js/453.1bdb1478.chunk.js": "/Fitpeo/static/js/453.1bdb1478.chunk.js",
+    "static/media/Anatomy.jpg": "/Fitpeo/static/media/Anatomy.0abcef7a8b17fb8f6ca4.jpg",
+    "index.html": "/Fitpeo/index.html",
+    "main.a5b3438f.css.map": "/Fitpeo/static/css/main.a5b3438f.css.map",
+    "main.3bc5e28e.js.map": "/Fitpeo/static/js/main.3bc5e28e.js.map",
+    "453.1bdb1478.chunk.js.map": "/Fitpeo/static/js/453.1bdb1478.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a5b3438f.css",
-    "static/js/main.1c491721.js"
+    "static/js/main.3bc5e28e.js"
   ]
 }
