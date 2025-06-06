@@ -30,8 +30,8 @@
 
 .anatomyImage {
   display: block;
-  width: 260px;
-  height: 400px;
+  width: 240px;
+  height: 340px;
   border-radius: 6px;
   border: 2px solid #F8FAFC;
   margin: 0;
@@ -59,12 +59,13 @@
 }
 
 .heart {
-  top: 100px;
-  left: 180px;
+  top: 90px;
+  left: 100px;
 }
 
 .Leg {
-  top: 260px;
-  left: -30px;
+  top: 220px;
+  left: -20px;
   background-color: aqua;
 }
+

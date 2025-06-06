@@ -3,7 +3,9 @@
   border-radius: 10px;
   padding: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  color: #402E7A; /* Apply to all by default */
+  color: #180161; 
+  margin-top: 0; /* Ensure no extra top margin */
+  padding-top: 0; /* Optional if needed */
 }
 
 .header {
@@ -11,6 +13,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
+  margin-top: 0;
 }
 
 .title {
@@ -21,7 +24,7 @@
 
 .viewAll {
   font-size: 14px;
-  color: #402E7A;
+  color: #180161;
   text-decoration: none;
 }
 
@@ -50,7 +53,7 @@
 .dayName {
   font-size: 15px;
   font-weight: 500;
-  color: #402E7A;
+  color: #180161;
 }
 
 /* ❗️ EXCEPTIONS for Thursday and Saturday — reset to default or custom color */
@@ -77,13 +80,13 @@
   background: #CBDCEB;
   border-radius: 8px;
   position: relative;
-  color: #402E7A; /* Inherit deep blue */
+  color: #180161; /* Inherit deep blue */
 }
 
 .appointmentIcon {
   margin-right: 12px;
   font-size: 20px;
-  color: #402E7A;
+  color: #180161;
 }
 
 .appointmentDetails {
@@ -94,12 +97,12 @@
   font-size: 14px;
   font-weight: 500;
   margin: 0 0 2px 0;
-  color: #402E7A;
+  color: #180161;
 }
 
 .appointmentTime {
   font-size: 13px;
-  color: #402E7A;
+  color: #180161;
   margin: 0;
 }
 

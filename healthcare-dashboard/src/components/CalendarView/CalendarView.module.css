@@ -85,7 +85,7 @@
 .appointmentCards {
   display: flex;
   gap: 16px;
-  margin-top: 24px;
+  margin-top: 8px;
   flex-wrap: wrap;
 }
 

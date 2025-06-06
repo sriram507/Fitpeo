@@ -12,7 +12,6 @@ import styles from "./App.module.css";
 function App() {
   return (
     <div className={styles.app}>
-      {/* This wrapper includes border around both sidebar and content */}
       <div className={styles.layoutWrapper}>
         <div className={styles.sidebar}>
           <Sidebar />
