@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Fitpeo/static/css/main.8fa267bc.css",
-    "main.js": "/Fitpeo/static/js/main.5b2cdbd2.js",
+    "main.css": "/Fitpeo/static/css/main.5710161e.css",
+    "main.js": "/Fitpeo/static/js/main.66f4d124.js",
     "static/js/453.1bdb1478.chunk.js": "/Fitpeo/static/js/453.1bdb1478.chunk.js",
     "static/media/Anatomy.jpg": "/Fitpeo/static/media/Anatomy.0abcef7a8b17fb8f6ca4.jpg",
     "index.html": "/Fitpeo/index.html",
-    "main.8fa267bc.css.map": "/Fitpeo/static/css/main.8fa267bc.css.map",
-    "main.5b2cdbd2.js.map": "/Fitpeo/static/js/main.5b2cdbd2.js.map",
+    "main.5710161e.css.map": "/Fitpeo/static/css/main.5710161e.css.map",
+    "main.66f4d124.js.map": "/Fitpeo/static/js/main.66f4d124.js.map",
     "453.1bdb1478.chunk.js.map": "/Fitpeo/static/js/453.1bdb1478.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8fa267bc.css",
-    "static/js/main.5b2cdbd2.js"
+    "static/css/main.5710161e.css",
+    "static/js/main.66f4d124.js"
   ]
 }
