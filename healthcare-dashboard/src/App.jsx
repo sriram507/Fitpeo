@@ -22,16 +22,18 @@ function App() {
             <div className={styles.middleRow}>
               <div className={styles.leftColumn}>
                 <TopBar />
-                <div className={styles.anatomyAndHealth}>
-                  <div className={styles.anatomySection}>
-                    <AnatomySection />
+                <div className={styles.mainLeftContent}>
+                  <div className={styles.anatomyAndHealth}>
+                    <div className={styles.anatomySection}>
+                      <AnatomySection />
+                    </div>
+                    <div className={styles.healthCards}>
+                      <HealthStatusCards />
+                    </div>
                   </div>
-                  <div className={styles.healthCards}>
-                    <HealthStatusCards />
+                  <div className={styles.activityFeed}>
+                    <ActivityFeed />
                   </div>
-                </div>
-                <div className={styles.activityFeed}>
-                  <ActivityFeed />
                 </div>
               </div>
 

@@ -1,6 +1,7 @@
 /* Reset & base */
 html, body, #root {
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -73,21 +74,27 @@ html, body, #root {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
   margin-right: 12px;
   min-width: 0;
   height: 100%;
-  overflow: hidden; /* Prevent scroll */
+}
+
+/* Main left content (wraps anatomy & activity feed) */
+.mainLeftContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 16px;
+  overflow-y: auto;
+  padding-bottom: 8px;
 }
 
 /* Anatomy + Health section */
 .anatomyAndHealth {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  min-height: 0;
-  flex-shrink: 1;
-  overflow: hidden;
+  gap: 16px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
 }
 
 .anatomySection {
@@ -96,18 +103,15 @@ html, body, #root {
   padding: 8px;
   border-radius: 5px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
 }
 
 .healthCards {
-  width: 240px; /* Reduced width */
+  width: 240px;
   flex-shrink: 0;
   background-color: #ffffff;
   padding: 8px;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-  margin-left: 12px;
-  overflow: hidden;
 }
 
 /* Activity Feed */
@@ -117,8 +121,6 @@ html, body, #root {
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
   width: 100%;
-  flex-shrink: 1;
-  overflow: hidden;
 }
 
 /* Right column */
@@ -130,7 +132,6 @@ html, body, #root {
   height: 100%;
   gap: 12px;
   flex-shrink: 1;
-  overflow: hidden;
 }
 
 .calendarView {
@@ -180,5 +181,9 @@ html, body, #root {
   .rightColumn {
     width: 100%;
     margin-right: 0;
+  }
+
+  .activityFeed {
+    height: auto;
   }
 }
