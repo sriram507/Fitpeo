@@ -1,10 +1,9 @@
 .container {
-  background: #F8FAFC;
+  background: #f8fafc;
   border-radius: 10px;
   padding: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   width: 100%;
-  max-width: 100%;
   box-sizing: border-box;
   color: #000080;
 }
@@ -20,7 +19,6 @@
   font-size: 18px;
   font-weight: 600;
   margin: 0;
-  color: #000080;
 }
 
 .icons {
@@ -51,7 +49,6 @@
   border-radius: 6px;
   font-weight: 600;
   font-size: 14px;
-  color: #000080;
 }
 
 .dateNumber {
@@ -68,24 +65,23 @@
   color: #000080;
 }
 
+/* Highlights */
 .specialHighlight {
-  background-color: #CBDCEB !important;
+  background-color: #cbdceb !important;
   font-weight: bold;
-  border-radius: 6px;
 }
 
 .deepHighlight {
-  background-color: #1C1678 !important;
+  background-color: #1c1678 !important;
   color: #ffffff !important;
   font-weight: bold;
-  border-radius: 6px;
 }
 
-/* Appointment Cards */
+/* Cards Section */
 .appointmentCards {
   display: flex;
   gap: 16px;
-  margin-top: 8px;
+  margin-top: 16px;
   flex-wrap: wrap;
 }
 
@@ -99,13 +95,13 @@
 }
 
 .highlightedCard {
-  background-color: #1C1678;
-  border: 1px solid #2196F3;
+  background-color: #1c1678;
+  border: 1px solid #2196f3;
   color: white;
 }
 
 .secondaryCard {
-  background-color: #CBDCEB;
+  background-color: #cbdceb;
   color: #000080;
 }
 
@@ -143,8 +139,4 @@
 
 .cardIcon {
   font-size: 14px;
-}
-
-.blueDay {
-  color: #000080 !important;
 }

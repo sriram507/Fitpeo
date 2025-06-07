@@ -10,6 +10,7 @@ function HealthStatusCards() {
       status: "critical",
       icon: "🫁",
       barClass: styles.redBar,
+      progress: 80,
     },
     {
       id: 2,
@@ -18,6 +19,7 @@ function HealthStatusCards() {
       status: "warning",
       icon: "🦷",
       barClass: styles.skyBlueBar,
+      progress: 60,
     },
     {
       id: 3,
@@ -26,34 +28,39 @@ function HealthStatusCards() {
       status: "healthy",
       icon: "🦴",
       barClass: styles.blueBar,
+      progress: 95,
     },
   ];
 
   return (
-    <div className={styles.wrapper}>
+    <section className={styles.wrapper} aria-label="Health Status Cards">
+      <h4 className={styles.title}>Health Status</h4>
       <div className={styles.container}>
         {cards.map((card) => (
-          <div
+          <article
             key={card.id}
             className={`${styles.card} ${styles[card.status]}`}
+            aria-label={`${card.title} status: ${card.status}`}
           >
             <div className={styles.cardHeader}>
-              <span className={styles.cardIcon}>{card.icon}</span>
-              <h4 className={styles.cardTitle}>{card.title}</h4>
+              <span className={styles.cardIcon} role="img" aria-label={card.title}>
+                {card.icon}
+              </span>
+              <h5 className={styles.cardTitle}>{card.title}</h5>
             </div>
             <div className={styles.cardDate}>{card.date}</div>
 
-            {/* Horizontal Progress Bar */}
-            <div className={styles.progressBar}>
+            {/* Progress Bar */}
+            <div className={styles.progressBar} role="progressbar" aria-valuenow={card.progress} aria-valuemin="0" aria-valuemax="100">
               <div
                 className={`${styles.progressFill} ${card.barClass}`}
-                style={{ width: "80%" }}
-              ></div>
+                style={{ width: `${card.progress}%` }}
+              />
             </div>
-          </div>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

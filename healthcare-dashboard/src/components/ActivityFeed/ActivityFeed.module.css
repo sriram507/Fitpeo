@@ -1,7 +1,8 @@
 .container {
-  background: #F8FAFC;
+  background: #f8fafc;
   border-radius: 10px;
   padding: 16px;
+  width: 100%;
 }
 
 .header {
@@ -20,7 +21,7 @@
 
 .appointmentCount {
   font-size: 14px;
-  color: #B6B09F;
+  color: #b6b09f;
 }
 
 .chartContainer {
@@ -28,6 +29,7 @@
   justify-content: center;
   align-items: flex-end;
   margin-top: 16px;
+  overflow-x: auto;
 }
 
 .barsContainer {
@@ -51,13 +53,14 @@
 
 .line {
   width: 2px;
-  background-color: #B6B09F;
+  background-color: #b6b09f;
   border-radius: 2px;
   position: relative;
 }
 
+/* Line color variants */
 .line1 {
-  background-color: #B6B09F;
+  background-color: #b6b09f;
 }
 
 .line2 {
@@ -69,16 +72,16 @@
 
 .line2 .top {
   width: 100%;
-  background-color: #4ED7F1;
+  background-color: #4ed7f1;
 }
 
 .line2 .bottom {
   width: 100%;
-  background-color: #211C84;
+  background-color: #211c84;
 }
 
 .line3 {
-  background-color: #1E90FF;
+  background-color: #1e90ff;
 }
 
 .line4 {
@@ -90,16 +93,45 @@
 
 .line4 div {
   width: 100%;
-  background-color: #B6B09F;
+  background-color: #b6b09f;
   border-radius: 2px;
 }
 
 .line5 {
-  background-color: #211C84;
+  background-color: #211c84;
 }
 
+/* Highlight effect */
+.highlightBar {
+  box-shadow: 0 0 6px #4ed7f1;
+}
+
+/* Day label */
 .dayLabel {
   margin-top: 6px;
   font-size: 12px;
-  color: #B6B09F;
+  color: #b6b09f;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .barsContainer {
+    gap: 16px;
+  }
+
+  .lineGroup {
+    gap: 3px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .appointmentCount {
+    font-size: 13px;
+  }
+
+  .dayLabel {
+    font-size: 11px;
+  }
 }

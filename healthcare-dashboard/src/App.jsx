@@ -11,12 +11,15 @@ import styles from "./App.module.css";
 
 function App() {
   return (
-    <div className={styles.app}>
-      <div className={styles.layoutWrapper}>
-        <div className={styles.sidebar}>
-          <Sidebar />
-        </div>
+    <div className={styles.app}> {/* Blue border wraps everything here */}
 
+      {/* 🔵 Sidebar goes first INSIDE .app */}
+      <div className={styles.sidebar}>
+        <Sidebar />
+      </div>
+
+      {/* Rest of the layout */}
+      <div className={styles.layoutWrapper}>
         <div className={styles.contentArea}>
           <div className={styles.pageWrapper}>
             <div className={styles.middleRow}>
@@ -49,6 +52,7 @@ function App() {
           </div>
         </div>
       </div>
+
     </div>
   );
 }

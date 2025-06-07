@@ -4,10 +4,9 @@ import {
   FiEye, 
   FiHeart, 
   FiActivity 
-} from 'react-icons/fi'; // Mixed icon usage
+} from 'react-icons/fi';
 import styles from './UpcomingSchedule.module.css';
 
-// Data defined here instead of separate file
 const appointmentsByDay = [
   {
     day: 'Thursday',
@@ -56,7 +55,6 @@ function UpcomingSchedule() {
     <div className={styles.container}>
       <div className={styles.header}>
         <h3 className={styles.title}>The Upcoming Schedule</h3>
-        {/* This view all link would normally be a router link */}
         <a href="#" className={styles.viewAll} onClick={(e) => e.preventDefault()}>
           View All
         </a>
@@ -89,7 +87,6 @@ function UpcomingSchedule() {
                       {appointment.time}
                     </p>
                   </div>
-                  {/* This would normally be a checkbox */}
                   {appointment.completed && (
                     <div className={styles.completedBadge}>✓</div>
                   )}

@@ -3,43 +3,47 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 10px 20px;
+  padding: 12px 20px;
   background-color: #fff;
   border-bottom: 1px solid #e0e0e0;
-  width: 90%;
-  max-width: 600px; 
-  margin-bottom: 16px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
-
 
 .searchBar {
   flex: 1;
   min-width: 0;
-  padding: 8px 14px;
+  padding: 10px 14px;
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 6px;
   background-color: #fff;
   outline: none;
+  font-family: inherit;
 }
 
 .notificationIconWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 8px;
   background-color: #f8fafc;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.2s ease;
   cursor: pointer;
+  border: none;
+}
+
+.notificationIconWrapper:hover {
+  background-color: #e5f0ff;
 }
 
 .notificationIcon {
   font-size: 20px;
   color: #121481;
-  flex-shrink: 0;
 }
 
 /* Responsive styles */
@@ -49,10 +53,6 @@
     align-items: stretch;
     gap: 10px;
     padding: 12px 16px;
-  }
-
-  .searchBar {
-    width: 100%;
   }
 
   .notificationIconWrapper {
@@ -68,12 +68,12 @@
 
   .searchBar {
     font-size: 13px;
-    padding: 6px 12px;
+    padding: 8px 12px;
   }
 
   .notificationIconWrapper {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
   }
 
   .notificationIcon {

@@ -1,52 +1,57 @@
-/* Reset & base */
-html, body, #root {
-  height: 100vh;
-  width: 100vw;
+/* Reset & base - ESSENTIAL FIXES HERE */
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
-/* App container */
+#root {
+  height: 100%;
+  display: flex;
+  border: 1px solid red; /* Temporary debug border */
+}
+
+/* App container - MODIFIED */
+/* Modify your .app class */
 .app {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  justify-content: center;
-  align-items: stretch;
-  background-color: #E9F6FF;
-  padding: 16px;
   box-sizing: border-box;
-}
-
-/* Layout wrapper */
-.layoutWrapper {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  max-width: 1800px;
-  background: #ffffff;
-  border-radius: 12px;
+  border: 12px solid #E9F6FF;
   overflow: hidden;
-  box-sizing: border-box;
+  position: relative; /* Add this */
 }
 
-/* Sidebar */
+/* Update sidebar styles */
 .sidebar {
   width: 240px;
   background: #f8f9fa;
   padding: 20px 0;
   box-sizing: border-box;
-  flex-shrink: 0;
   border-right: 1px solid #eee;
+  height: 100%; /* Add this */
+  overflow-y: auto; /* Add scroll if content overflows */
 }
+
+.layoutWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* The rest of your CSS (leftColumn, rightColumn, etc.) remains unchanged */
+
 
 /* Content area */
 .contentArea {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0 48px 24px 48px;
+  padding: 0 24px 24px 24px;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -79,7 +84,7 @@ html, body, #root {
   height: 100%;
 }
 
-/* Main left content (wraps anatomy & activity feed) */
+/* Main left content */
 .mainLeftContent {
   display: flex;
   flex-direction: column;
@@ -89,14 +94,13 @@ html, body, #root {
   padding-bottom: 8px;
 }
 
-/* Anatomy + Health section */
+/* Anatomy and Health */
 .anatomyAndHealth {
   display: flex;
   gap: 16px;
-  flex-wrap: wrap;
-  flex-shrink: 0;
 }
 
+/* Anatomy section */
 .anatomySection {
   flex: 1;
   background-color: #ffffff;
@@ -105,9 +109,9 @@ html, body, #root {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
+/* Health cards */
 .healthCards {
   width: 240px;
-  flex-shrink: 0;
   background-color: #ffffff;
   padding: 8px;
   border-radius: 8px;
@@ -134,6 +138,7 @@ html, body, #root {
   flex-shrink: 1;
 }
 
+/* Calendar view */
 .calendarView {
   flex: 1;
   min-height: 0;
@@ -141,6 +146,7 @@ html, body, #root {
   padding: 16px;
 }
 
+/* Upcoming schedule */
 .upcomingSchedule {
   background-color: #ffffff;
   padding: 16px;

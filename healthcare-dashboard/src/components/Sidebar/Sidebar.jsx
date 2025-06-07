@@ -10,34 +10,56 @@ import {
   FiHelpCircle,
   FiSettings,
   FiMenu,
-  FiX
+  FiX,
 } from "react-icons/fi";
 import styles from "./Sidebar.module.css";
 
 const navItems = [
-  { id: 1, name: "Dashboard", icon: <FiHome />, active: true },
+  { id: 1, name: "Dashboard", icon: <FiHome /> },
   { id: 2, name: "History", icon: <FiClock /> },
   { id: 3, name: "Calendar", icon: <FiCalendar /> },
   { id: 4, name: "Appointments", icon: <FiClipboard /> },
   { id: 5, name: "Statistics", icon: <FiPieChart /> },
   { id: 6, name: "Tests", icon: <FiActivity /> },
   { id: 7, name: "Chat", icon: <FiMessageSquare /> },
-  { id: 8, name: "Support", icon: <FiHelpCircle /> }
+  { id: 8, name: "Support", icon: <FiHelpCircle /> },
 ];
 
 const settingItem = { id: 9, name: "Setting", icon: <FiSettings /> };
 
+function NavItem({ item, isActive, onClick }) {
+  return (
+    <li>
+      <a
+        href="#"
+        className={`${styles.navLink} ${isActive ? styles.active : ""}`}
+        onClick={(e) => {
+          e.preventDefault();
+          onClick?.(item.id);
+        }}
+        aria-label={item.name}
+      >
+        <span className={styles.navIcon}>{item.icon}</span>
+        <span className={styles.linkText}>{item.name}</span>
+        {isActive && <div className={styles.activeIndicator} />}
+      </a>
+    </li>
+  );
+}
+
 function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleSidebar = () => setIsOpen(!isOpen);
+  const [activeId, setActiveId] = useState(1);
+
+  const toggleSidebar = () => setIsOpen((prev) => !prev);
 
   return (
     <>
-      <div className={styles.menuToggle} onClick={toggleSidebar}>
+      <div className={styles.menuToggle} onClick={toggleSidebar} aria-label="Toggle Menu">
         {isOpen ? <FiX size={22} /> : <FiMenu size={22} />}
       </div>
 
-      <aside className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}>
+      <aside className={`${styles.sidebar} ${isOpen ? styles.open : ""}`} role="navigation">
         <div className={styles.sidebarHeader}>
           <h2 className={styles.healthcareTitle}>
             <span className={styles.health}>Health</span>
@@ -49,27 +71,17 @@ function Sidebar() {
         <nav className={styles.navListWrapper}>
           <ul className={styles.navList}>
             {navItems.map((item) => (
-              <li key={item.id}>
-                <a
-                  href="#"
-                  className={`${styles.navLink} ${item.active ? styles.active : ""}`}
-                  onClick={(e) => e.preventDefault()}
-                >
-                  <span className={styles.navIcon}>{item.icon}</span>
-                  <span className={styles.linkText}>{item.name}</span>
-                  <div className={styles.activeIndicator} />
-                </a>
-              </li>
+              <NavItem
+                key={item.id}
+                item={item}
+                isActive={item.id === activeId}
+                onClick={setActiveId}
+              />
             ))}
           </ul>
 
           <ul className={styles.navList}>
-            <li>
-              <a href="#" className={styles.navLink} onClick={(e) => e.preventDefault()}>
-                <span className={styles.navIcon}>{settingItem.icon}</span>
-                <span className={styles.linkText}>{settingItem.name}</span>
-              </a>
-            </li>
+            <NavItem item={settingItem} isActive={activeId === settingItem.id} onClick={setActiveId} />
           </ul>
         </nav>
 

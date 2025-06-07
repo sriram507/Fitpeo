@@ -4,8 +4,8 @@
   padding: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   color: #180161; 
-  margin-top: 0; /* Ensure no extra top margin */
-  padding-top: 0; /* Optional if needed */
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .header {
@@ -56,10 +56,9 @@
   color: #180161;
 }
 
-/* ❗️ EXCEPTIONS for Thursday and Saturday — reset to default or custom color */
 .dayGroup:nth-child(4) .dayName,
 .dayGroup:nth-child(6) .dayName {
-  color: #333; /* Or whatever default you want for these days */
+  color: #333;
 }
 
 .dayDate {
@@ -71,16 +70,22 @@
   display: flex;
   flex-direction: row;
   gap: 8px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 4px;
 }
 
 .appointmentCard {
+  flex: 0 0 auto;
+  width: 220px;
   display: flex;
   align-items: center;
   padding: 12px;
   background: #CBDCEB;
   border-radius: 8px;
   position: relative;
-  color: #180161; /* Inherit deep blue */
+  color: #180161;
+  box-sizing: border-box;
 }
 
 .appointmentIcon {
@@ -122,4 +127,25 @@
   justify-content: center;
   font-size: 12px;
   margin-left: 8px;
+}
+
+.appointmentsList::-webkit-scrollbar {
+  height: 6px;
+}
+
+.appointmentsList::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .appointmentsList {
+    flex-direction: column;
+    overflow-x: visible;
+  }
+  
+  .appointmentCard {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }

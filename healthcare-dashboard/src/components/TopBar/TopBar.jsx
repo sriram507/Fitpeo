@@ -4,16 +4,17 @@ import styles from './TopBar.module.css';
 
 function TopBar() {
   return (
-    <div className={styles.topBar}>
+    <header className={styles.topBar}>
       <input
         type="text"
-        placeholder="Search  "
+        placeholder="Search..."
         className={styles.searchBar}
+        aria-label="Search input"
       />
-      <div className={styles.notificationIconWrapper}>
+      <button className={styles.notificationIconWrapper} aria-label="Notifications">
         <FaBell className={styles.notificationIcon} />
-      </div>
-    </div>
+      </button>
+    </header>
   );
 }
 

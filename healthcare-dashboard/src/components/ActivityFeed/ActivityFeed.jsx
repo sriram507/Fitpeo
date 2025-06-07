@@ -10,51 +10,60 @@ const activityData = {
     { day: 'Thu', pattern: [35, 40, 45, 20, 40] },
     { day: 'Fri', pattern: [25, 45, 30, 35, 30] },
     { day: 'Sat', pattern: [20, 30, 25, 40, 25] },
-    { day: 'Sun', pattern: [45, 35, 40, 30, 50] }
-  ]
+    { day: 'Sun', pattern: [45, 35, 40, 30, 50] },
+  ],
 };
 
 function ActivityFeed() {
   return (
-    <div className={styles.container}>
+    <section className={styles.container} aria-label="Weekly Activity Chart">
       <div className={styles.header}>
         <h3 className={styles.title}>Activity</h3>
-        <div className={styles.appointmentCount}>
+        <span className={styles.appointmentCount}>
           {activityData.totalAppointments} Appointments this week
-        </div>
+        </span>
       </div>
 
       <div className={styles.chartContainer}>
         <div className={styles.barsContainer}>
-          {activityData.weeklyData.map((item, index) => (
-            <div key={index} className={styles.barGroup}>
+          {activityData.weeklyData.map((item, dayIndex) => (
+            <div key={dayIndex} className={styles.barGroup}>
               <div className={styles.lineGroup}>
-                {item.pattern.map((height, i) => {
-                  const isTuesday09 = item.day === 'Tue' && i === 1;
+                {item.pattern.map((height, lineIndex) => {
+                  const isSpecialLine = item.day === 'Tue' && lineIndex === 1;
+
                   return (
                     <div
-                      key={i}
-                      className={`${styles.line} ${styles[`line${i + 1}`]} ${
-                        isTuesday09 ? styles.highlightBar : ''
+                      key={lineIndex}
+                      className={`${styles.line} ${styles[`line${lineIndex + 1}`]} ${
+                        isSpecialLine ? styles.highlightBar : ''
                       }`}
                       style={{ height: `${height}px` }}
                     >
-                      {i === 1 && (
+                      {lineIndex === 1 && (
                         <>
                           <div
                             className={styles.top}
                             style={{ height: `${height / 2}px` }}
-                          ></div>
+                          />
                           <div
                             className={styles.bottom}
                             style={{ height: `${height / 2}px` }}
-                          ></div>
+                          />
                         </>
                       )}
-                      {i === 3 && (
+                      {lineIndex === 3 && (
                         <>
-                          <div style={{ height: `${height * 0.4}px` }}></div>
-                          <div style={{ height: `${height * 0.4}px` }}></div>
+                          <div
+                            style={{
+                              height: `${height * 0.4}px`,
+                            }}
+                          />
+                          <div
+                            style={{
+                              height: `${height * 0.4}px`,
+                            }}
+                          />
                         </>
                       )}
                     </div>
@@ -66,7 +75,7 @@ function ActivityFeed() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
