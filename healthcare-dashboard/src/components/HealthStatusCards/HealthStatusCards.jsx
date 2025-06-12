@@ -34,7 +34,6 @@ function HealthStatusCards() {
 
   return (
     <section className={styles.wrapper} aria-label="Health Status Cards">
-      <h4 className={styles.title}>Health Status</h4>
       <div className={styles.container}>
         {cards.map((card) => (
           <article
