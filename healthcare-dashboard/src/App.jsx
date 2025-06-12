@@ -9,52 +9,52 @@ import UpcomingSchedule from "./components/UpcomingSchedule/UpcomingSchedule";
 
 import styles from "./App.module.css";
 
-function App() {
+const App = () => {
   return (
-    <div className={styles.app}> {/* Blue border wraps everything here */}
-
-      {/* 🔵 Sidebar goes first INSIDE .app */}
-      <div className={styles.sidebar}>
+    <div className={styles.app}>
+      <aside className={styles.sidebar}>
         <Sidebar />
-      </div>
+      </aside>
 
-      {/* Rest of the layout */}
-      <div className={styles.layoutWrapper}>
-        <div className={styles.contentArea}>
-          <div className={styles.pageWrapper}>
-            <div className={styles.middleRow}>
-              <div className={styles.leftColumn}>
+      <main className={styles.main}>
+        <div className={styles.contentWrapper}>
+          <div className={styles.layout}>
+            {/* Left side: TopBar, Anatomy, Health, Activity */}
+            <section className={styles.leftPane}>
+              <div className={styles.topBar}>
                 <TopBar />
-                <div className={styles.mainLeftContent}>
-                  <div className={styles.anatomyAndHealth}>
-                    <div className={styles.anatomySection}>
-                      <AnatomySection />
-                    </div>
-                    <div className={styles.healthCards}>
-                      <HealthStatusCards />
-                    </div>
-                  </div>
-                  <div className={styles.activityFeed}>
-                    <ActivityFeed />
-                  </div>
-                </div>
               </div>
 
-              <div className={styles.rightColumn}>
-                <div className={styles.calendarView}>
-                  <CalendarView />
+              <div className={styles.leftContent}>
+                <div className={styles.healthSection}>
+                  <div className={styles.anatomy}>
+                    <AnatomySection />
+                  </div>
+                  <div className={styles.healthCards}>
+                    <HealthStatusCards />
+                  </div>
                 </div>
-                <div className={styles.upcomingSchedule}>
-                  <UpcomingSchedule />
+
+                <div className={styles.activity}>
+                  <ActivityFeed />
                 </div>
               </div>
-            </div>
+            </section>
+
+            {/* Right side: Calendar and Schedule */}
+            <aside className={styles.rightPane}>
+              <div className={styles.calendar}>
+                <CalendarView />
+              </div>
+              <div className={styles.schedule}>
+                <UpcomingSchedule />
+              </div>
+            </aside>
           </div>
         </div>
-      </div>
-
+      </main>
     </div>
   );
-}
+};
 
 export default App;

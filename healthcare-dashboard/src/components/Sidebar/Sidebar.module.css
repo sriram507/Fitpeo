@@ -10,23 +10,16 @@
   z-index: 15;
 }
 
-.sidebarHeader {
+.header {
   padding: 0 20px 15px;
   border-bottom: 1px solid #f0f0f0;
   margin-bottom: 10px;
 }
 
-.sidebarTitle {
-  font-size: 13px;
-  color: #999;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.healthcareTitle {
+.logo {
   font-size: 22px;
-  margin: 0 0 10px 0;
   font-weight: bold;
+  margin: 0 0 10px;
 }
 
 .health {
@@ -37,7 +30,14 @@
   color: #000080;
 }
 
-.navListWrapper {
+.sectionLabel {
+  font-size: 13px;
+  color: #999;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.navWrapper {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -46,19 +46,21 @@
 
 .navList {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .navLink {
   display: flex;
   align-items: center;
   padding: 12px 20px;
+  font-size: 15px;
   color: #555;
   text-decoration: none;
-  font-size: 15px;
   position: relative;
   transition: all 0.2s ease;
+  cursor: pointer;
+  user-select: none;
 }
 
 .navLink:hover {
@@ -66,49 +68,48 @@
   color: #2a86ff;
 }
 
-.navLink.active {
+.active {
   color: #2a86ff;
   font-weight: 500;
 }
 
-.navIcon {
-  margin-right: 12px;
+.icon {
   font-size: 18px;
+  margin-right: 12px;
   width: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.linkText {
-  flex-grow: 1;
+.text {
+  flex: 1;
 }
 
 .activeIndicator {
   position: absolute;
-  right: 0;
   top: 0;
-  height: 100%;
+  right: 0;
   width: 3px;
+  height: 100%;
   background: #2a86ff;
   border-radius: 2px 0 0 2px;
-  opacity: 1;
 }
 
-.sidebarFooter {
+.footer {
   padding: 15px 20px 0;
   margin-top: auto;
-  border-top: 1px solid #f0f0f0;
   font-size: 12px;
   color: #999;
+  border-top: 1px solid #f0f0f0;
 }
 
-/* Hamburger Menu */
+/* Toggle button for mobile */
 .menuToggle {
   position: fixed;
   top: 16px;
   left: 16px;
-  background: white;
+  background: #fff;
   padding: 8px;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -117,7 +118,7 @@
   display: none;
 }
 
-/* Responsive Styles */
+/* Responsive */
 @media (max-width: 768px) {
   .menuToggle {
     display: block;
@@ -129,8 +130,6 @@
     left: 0;
     bottom: 0;
     transform: translateX(-100%);
-    background: #f8fafc;
-    width: 240px;
   }
 
   .sidebar.open {

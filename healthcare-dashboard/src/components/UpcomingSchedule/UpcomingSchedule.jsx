@@ -1,28 +1,30 @@
 import React from 'react';
-import { 
-  FiCheckCircle, 
-  FiEye, 
-  FiHeart, 
-  FiActivity 
+import {
+  FiCheckCircle,
+  FiEye,
+  FiHeart,
+  FiActivity
 } from 'react-icons/fi';
+
 import styles from './UpcomingSchedule.module.css';
 
-const appointmentsByDay = [
+// Static data for demo purposes
+const scheduleData = [
   {
     day: 'Thursday',
     date: 'October 21, 2021',
     appointments: [
       {
         id: 1,
-        title: 'Health checkup complete',
         time: '09:00 AM',
+        title: 'Health checkup complete',
         icon: <FiCheckCircle color="#4CAF50" />,
         completed: true
       },
       {
         id: 2,
-        title: 'Ophthalmologist',
         time: '11:30 AM',
+        title: 'Ophthalmologist',
         icon: <FiEye color="#2196F3" />,
         completed: false
       }
@@ -34,15 +36,15 @@ const appointmentsByDay = [
     appointments: [
       {
         id: 3,
-        title: 'Cardiologist',
         time: '10:15 AM',
+        title: 'Cardiologist',
         icon: <FiHeart color="#F44336" />,
         completed: false
       },
       {
         id: 4,
-        title: 'Neurologist',
         time: '02:00 PM',
+        title: 'Neurologist',
         icon: <FiActivity color="#673AB7" />,
         completed: false
       }
@@ -52,43 +54,35 @@ const appointmentsByDay = [
 
 function UpcomingSchedule() {
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
+    <section className={styles.container} aria-label="Upcoming Appointments">
+      <header className={styles.header}>
         <h3 className={styles.title}>The Upcoming Schedule</h3>
-        <a href="#" className={styles.viewAll} onClick={(e) => e.preventDefault()}>
+        <a href="#" className={styles.viewAllLink} onClick={e => e.preventDefault()}>
           View All
         </a>
-      </div>
+      </header>
 
-      <div className={styles.schedule}>
-        {appointmentsByDay.map((dayGroup) => (
-          <div key={dayGroup.day} className={styles.dayGroup}>
+      <div className={styles.daysWrapper}>
+        {scheduleData.map((dayBlock) => (
+          <div key={dayBlock.day} className={styles.daySection}>
             <div className={styles.dayHeader}>
-              <span className={styles.dayName}>On {dayGroup.day}</span>
-              <span className={styles.dayDate}>{dayGroup.date}</span>
+              <span className={styles.dayName}>On {dayBlock.day}</span>
+              <span className={styles.dayDate}>{dayBlock.date}</span>
             </div>
 
-            <div className={styles.appointmentsList}>
-              {dayGroup.appointments.map((appointment) => (
-                <div 
-                  key={appointment.id}
-                  className={`${styles.appointmentCard} ${
-                    appointment.completed ? styles.completed : ''
-                  }`}
+            <div className={styles.appointmentScroll}>
+              {dayBlock.appointments.map(appt => (
+                <div
+                  key={appt.id}
+                  className={`${styles.card} ${appt.completed ? styles.completed : ''}`}
                 >
-                  <div className={styles.appointmentIcon}>
-                    {appointment.icon}
+                  <div className={styles.icon}>{appt.icon}</div>
+                  <div className={styles.info}>
+                    <h4 className={styles.titleText}>{appt.title}</h4>
+                    <p className={styles.timeText}>{appt.time}</p>
                   </div>
-                  <div className={styles.appointmentDetails}>
-                    <h4 className={styles.appointmentTitle}>
-                      {appointment.title}
-                    </h4>
-                    <p className={styles.appointmentTime}>
-                      {appointment.time}
-                    </p>
-                  </div>
-                  {appointment.completed && (
-                    <div className={styles.completedBadge}>✓</div>
+                  {appt.completed && (
+                    <div className={styles.checkmark}>✓</div>
                   )}
                 </div>
               ))}
@@ -96,7 +90,7 @@ function UpcomingSchedule() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

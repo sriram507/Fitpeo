@@ -1,5 +1,6 @@
+/* === Container Styling === */
 .container {
-  background: #f8fafc;
+  background-color: #f8fafc;
   border-radius: 10px;
   padding: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -8,6 +9,7 @@
   color: #000080;
 }
 
+/* === Header Section === */
 .header {
   display: flex;
   justify-content: space-between;
@@ -28,21 +30,23 @@
 
 .icon {
   font-size: 20px;
-  color: #000080;
   cursor: pointer;
   padding: 4px;
+  color: #000080;
 }
 
 .addIcon {
   padding-left: 8px;
 }
 
+/* === Calendar Grid === */
 .calendarGrid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 0px 8px;
+  gap: 0 8px;
 }
 
+/* Days and Dates */
 .dayHeader {
   text-align: center;
   padding: 8px 4px;
@@ -57,6 +61,7 @@
   font-weight: 500;
 }
 
+/* Time Slot Styles */
 .timeSlot {
   text-align: center;
   padding: 12px 4px;
@@ -65,7 +70,7 @@
   color: #000080;
 }
 
-/* Highlights */
+/* === Highlight Styles === */
 .specialHighlight {
   background-color: #cbdceb !important;
   font-weight: bold;
@@ -73,38 +78,42 @@
 
 .deepHighlight {
   background-color: #1c1678 !important;
-  color: #ffffff !important;
+  color: white !important;
   font-weight: bold;
 }
 
-/* Cards Section */
+/* === Appointment Cards === */
 .appointmentCards {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   margin-top: 16px;
-  flex-wrap: wrap;
 }
 
 .appointmentCard {
+  background-color: white;
   border-radius: 8px;
   padding: 12px;
   flex: 1 1 45%;
   min-width: 200px;
-  box-sizing: border-box;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
 }
 
+/* Highlighted Card (Primary) */
 .highlightedCard {
   background-color: #1c1678;
   border: 1px solid #2196f3;
   color: white;
 }
 
+/* Secondary Card */
 .secondaryCard {
   background-color: #cbdceb;
   color: #000080;
 }
 
+/* Card Header Styling */
 .cardHeader {
   display: flex;
   align-items: center;

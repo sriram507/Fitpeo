@@ -1,21 +1,24 @@
 .wrapper {
-  padding: 0 0 0 40px;
+  padding-left: 40px;
   font-family: Arial, sans-serif;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: #ffffff;
   width: 100%;
+  max-height: 360px;
+  overflow: hidden;
 }
 
-.pageTitle {
+.heading {
   font-size: 24px;
   font-weight: bold;
   color: #000080;
-  margin: 0 0 10px 5px;
+  margin-bottom: 10px;
+  margin-left: 5px;
 }
 
-.container {
+.imageContainer {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -24,20 +27,21 @@
 
 .anatomyImage {
   width: 280px;
-  height: 360px;
+  height: 320px;
   border-radius: 6px;
   border: 2px solid #f8fafc;
 }
 
-.indicator {
+/* Badge Styling */
+.statusBadge {
   position: absolute;
   display: flex;
   align-items: center;
   gap: 6px;
-  background-color: #211c84;
   padding: 4px 8px;
   border-radius: 6px;
   font-size: 14px;
+  font-weight: 500;
   color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -50,14 +54,15 @@
   font-weight: bold;
 }
 
-/* Positioning for Indicators */
+/* Indicator Positioning */
 .heart {
-  top: 100px;
-  left: 120px;
+  top: 85px;
+  left: 140px;
+  background-color: #211c84;
 }
 
 .leg {
-  top: 260px;
+  top: 200px;
   left: -20px;
   background-color: #00ffff;
 }
@@ -69,21 +74,26 @@
 }
 
 .healthy {
-  background-color: #32cd32; /* limegreen */
+  background-color: #32cd32;
 }
 
 .warning {
-  background-color: #ffcc00; /* yellow warning */
+  background-color: #ffcc00;
 }
 
-/* Responsive adjustments */
+/* Mobile Responsive */
 @media (max-width: 480px) {
   .wrapper {
     padding-left: 16px;
   }
 
+  .heading {
+    font-size: 20px;
+  }
+
   .anatomyImage {
     width: 200px;
+    height: auto;
   }
 
   .heart {
@@ -96,11 +106,7 @@
     left: -10px;
   }
 
-  .pageTitle {
-    font-size: 20px;
-  }
-
-  .indicator {
+  .statusBadge {
     font-size: 13px;
     padding: 3px 6px;
   }

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./HealthStatusCards.module.css";
 
 function HealthStatusCards() {
-  const cards = [
+  const healthData = [
     {
       id: 1,
       title: "Lungs",
@@ -27,33 +27,41 @@ function HealthStatusCards() {
       date: "Oct 15, 2021",
       status: "healthy",
       icon: "🦴",
-      barClass: styles.blueBar,
+      barClass: styles.orangeBar,
       progress: 95,
     },
   ];
 
   return (
-    <section className={styles.wrapper} aria-label="Health Status Cards">
-      <div className={styles.container}>
-        {cards.map((card) => (
+    <section className={styles.wrapper} aria-label="Health Status Summary">
+      <div className={styles.cardsContainer}>
+        {healthData.map((item) => (
           <article
-            key={card.id}
-            className={`${styles.card} ${styles[card.status]}`}
-            aria-label={`${card.title} status: ${card.status}`}
+            key={item.id}
+            className={`${styles.card} ${styles[item.status]}`}
+            aria-label={`${item.title} health status: ${item.status}`}
           >
-            <div className={styles.cardHeader}>
-              <span className={styles.cardIcon} role="img" aria-label={card.title}>
-                {card.icon}
+            <header className={styles.cardHeader}>
+              <span className={styles.icon} role="img" aria-label={item.title}>
+                {item.icon}
               </span>
-              <h5 className={styles.cardTitle}>{card.title}</h5>
-            </div>
-            <div className={styles.cardDate}>{card.date}</div>
+              <h4 className={styles.title}>{item.title}</h4>
+            </header>
 
-            {/* Progress Bar */}
-            <div className={styles.progressBar} role="progressbar" aria-valuenow={card.progress} aria-valuemin="0" aria-valuemax="100">
+            <time className={styles.date} dateTime={item.date}>
+              {item.date}
+            </time>
+
+            <div
+              className={styles.progressBar}
+              role="progressbar"
+              aria-valuenow={item.progress}
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
               <div
-                className={`${styles.progressFill} ${card.barClass}`}
-                style={{ width: `${card.progress}%` }}
+                className={`${styles.progressFill} ${item.barClass}`}
+                style={{ width: `${item.progress}%` }}
               />
             </div>
           </article>

@@ -1,19 +1,18 @@
+/* === Wrapper === */
 .container {
-  background: #F8FAFC;
+  background-color: #f8fafc;
   border-radius: 10px;
   padding: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  color: #180161; 
-  margin-top: 0;
-  padding-top: 0;
+  color: #180161;
 }
 
+/* === Header === */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0;
-  margin-top: 0;
+  margin-bottom: 12px;
 }
 
 .title {
@@ -22,26 +21,27 @@
   margin: 0;
 }
 
-.viewAll {
+.viewAllLink {
   font-size: 14px;
   color: #180161;
   text-decoration: none;
 }
 
-.viewAll:hover {
+.viewAllLink:hover {
   text-decoration: underline;
 }
 
-.schedule {
+/* === Appointment Sections === */
+.daysWrapper {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 0;
 }
 
-.dayGroup {
+.daySection {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
 }
 
 .dayHeader {
@@ -56,95 +56,90 @@
   color: #180161;
 }
 
-.dayGroup:nth-child(4) .dayName,
-.dayGroup:nth-child(6) .dayName {
-  color: #333;
-}
-
 .dayDate {
   font-size: 13px;
   color: #888;
 }
 
-.appointmentsList {
+/* === Scrollable Appointment Cards === */
+.appointmentScroll {
   display: flex;
-  flex-direction: row;
-  gap: 8px;
   flex-wrap: nowrap;
+  gap: 10px;
   overflow-x: auto;
   padding-bottom: 4px;
 }
 
-.appointmentCard {
-  flex: 0 0 auto;
-  width: 220px;
+.card {
+  background-color: #cbdceb;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   padding: 12px;
-  background: #CBDCEB;
-  border-radius: 8px;
+  width: 220px;
+  flex-shrink: 0;
+  box-sizing: border-box;
   position: relative;
   color: #180161;
-  box-sizing: border-box;
 }
 
-.appointmentIcon {
-  margin-right: 12px;
+.icon {
   font-size: 20px;
-  color: #180161;
+  margin-right: 12px;
 }
 
-.appointmentDetails {
+.info {
   flex-grow: 1;
 }
 
-.appointmentTitle {
+.titleText {
   font-size: 14px;
   font-weight: 500;
   margin: 0 0 2px 0;
-  color: #180161;
 }
 
-.appointmentTime {
+.timeText {
   font-size: 13px;
-  color: #180161;
   margin: 0;
 }
 
-.completed .appointmentTitle,
-.completed .appointmentTime {
+/* === Completed Appointment Styling === */
+.completed .titleText,
+.completed .timeText {
   opacity: 0.7;
 }
 
-.completedBadge {
+.checkmark {
   width: 20px;
   height: 20px;
-  background: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border-radius: 50%;
+  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
   margin-left: 8px;
 }
 
-.appointmentsList::-webkit-scrollbar {
+/* === Scrollbar Styling === */
+.appointmentScroll::-webkit-scrollbar {
   height: 6px;
 }
 
-.appointmentsList::-webkit-scrollbar-thumb {
-  background: #ccc;
+.appointmentScroll::-webkit-scrollbar-thumb {
+  background-color: #ccc;
   border-radius: 4px;
 }
 
+/* === Mobile Responsive === */
 @media (max-width: 600px) {
-  .appointmentsList {
+  .appointmentScroll {
     flex-direction: column;
     overflow-x: visible;
   }
-  
-  .appointmentCard {
+
+  .card {
     width: 100%;
     justify-content: flex-start;
   }

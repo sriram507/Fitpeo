@@ -1,126 +1,119 @@
+/* === Container Layout === */
 .container {
-  background: #f8fafc;
+  background-color: #f8fafc;
   border-radius: 10px;
   padding: 16px;
-  width: 580px;
-  max-width:none;
+  max-width: 580px;
+  width: 100%;
 }
 
+/* === Header Styles === */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .title {
   font-size: 18px;
   font-weight: bold;
   color: #000080;
-  margin: 0;
 }
 
-.appointmentCount {
+.summary {
   font-size: 14px;
   color: #b6b09f;
 }
 
-.chartContainer {
+/* === Chart Container === */
+.chart {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  gap: 24px;
   margin-top: 16px;
   overflow-x: auto;
 }
 
-.barsContainer {
-  display: flex;
-  gap: 24px;
-  align-items: flex-end;
-}
-
-.barGroup {
+/* === Each Day's Column === */
+.dayGroup {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.lineGroup {
+.bars {
   display: flex;
-  flex-direction: row;
   gap: 4px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
-.line {
+/* === Default Bar Style === */
+.bar {
   width: 2px;
   background-color: #b6b09f;
   border-radius: 2px;
   position: relative;
 }
 
-/* Line color variants */
-.line1 {
+/* === Custom Bar Variants === */
+.bar1 {
   background-color: #b6b09f;
 }
 
-.line2 {
+.bar2 {
   background: none;
   display: flex;
   flex-direction: column;
   padding: 0;
 }
 
-.line2 .top {
-  width: 100%;
-  background-color: #4ed7f1;
-}
-
-.line2 .bottom {
-  width: 100%;
-  background-color: #211c84;
-}
-
-.line3 {
+.bar3 {
   background-color: #1e90ff;
 }
 
-.line4 {
+.bar4 {
   background: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.line4 div {
-  width: 100%;
-  background-color: #b6b09f;
-  border-radius: 2px;
-}
-
-.line5 {
+.bar5 {
   background-color: #211c84;
 }
 
-/* Highlight effect */
-.highlightBar {
+/* === Split Segments === */
+.segmentTop {
+  background-color: #4ed7f1;
+  width: 100%;
+}
+
+.segmentBottom {
+  background-color: #211c84;
+  width: 100%;
+}
+
+/* === Highlight Effect for Specific Bar === */
+.highlight {
   box-shadow: 0 0 6px #4ed7f1;
 }
 
-/* Day label */
+/* === Day Labels === */
 .dayLabel {
-  margin-top: 6px;
   font-size: 12px;
   color: #b6b09f;
+  margin-top: 4px;
 }
 
-/* Responsive tweaks */
+/* === Responsive Adjustments === */
 @media (max-width: 768px) {
-  .barsContainer {
+  .chart {
     gap: 16px;
   }
 
-  .lineGroup {
+  .bars {
     gap: 3px;
   }
 
@@ -128,7 +121,7 @@
     font-size: 16px;
   }
 
-  .appointmentCount {
+  .summary {
     font-size: 13px;
   }
 

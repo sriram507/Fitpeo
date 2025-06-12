@@ -2,20 +2,20 @@ import React from 'react';
 import { FaBell } from 'react-icons/fa';
 import styles from './TopBar.module.css';
 
-function TopBar() {
+const TopBar = () => {
   return (
     <header className={styles.topBar}>
       <input
         type="text"
-        placeholder="Search..."
         className={styles.searchBar}
-        aria-label="Search input"
+        placeholder="Search..."
+        aria-label="Search"
       />
-      <button className={styles.notificationIconWrapper} aria-label="Notifications">
-        <FaBell className={styles.notificationIcon} />
+      <button className={styles.notificationButton} aria-label="Notifications">
+        <FaBell className={styles.icon} />
       </button>
     </header>
   );
-}
+};
 
 export default TopBar;

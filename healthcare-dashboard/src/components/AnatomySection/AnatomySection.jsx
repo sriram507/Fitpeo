@@ -5,30 +5,30 @@ import styles from './AnatomySection.module.css';
 
 function AnatomySection() {
   return (
-    <section className={styles.wrapper} aria-label="Anatomy Dashboard">
-      {/* Page Title */}
-      <h3 className={styles.pageTitle}>Dashboard</h3>
+    <section className={styles.wrapper} aria-label="Anatomy Overview Section">
+      {/* Section Heading */}
+      <h2 className={styles.heading}>Dashboard</h2>
 
-      {/* Main Anatomy Image */}
-      <div className={styles.container}>
+      <div className={styles.imageContainer}>
+        {/* Main Anatomy Image */}
         <img
           src={anatomyImage}
-          alt="Illustration of human body anatomy"
+          alt="Diagram of human body anatomy"
           className={styles.anatomyImage}
         />
 
-        {/* Heart Indicator */}
-        <div className={`${styles.indicator} ${styles.heart}`} role="region" aria-label="Heart Indicator">
-          <FaHeart className={styles.icon} aria-hidden="true" />
+        {/* Heart Status Badge */}
+        <div className={`${styles.statusBadge} ${styles.heart}`} aria-label="Heart Status: Healthy">
+          <FaHeart className={styles.icon} />
           <span className={styles.label}>Healthy Heart</span>
           <span className={`${styles.dot} ${styles.healthy}`} title="Healthy" />
         </div>
 
-        {/* Leg Indicator */}
-        <div className={`${styles.indicator} ${styles.leg}`} role="region" aria-label="Leg Indicator">
-          <FaBone className={styles.icon} aria-hidden="true" />
+        {/* Leg Status Badge */}
+        <div className={`${styles.statusBadge} ${styles.leg}`} aria-label="Leg Status: Warning">
+          <FaBone className={styles.icon} />
           <span className={styles.label}>Healthy Leg</span>
-          <span className={`${styles.dot} ${styles.warning}`} title="Warning" />
+          <span className={`${styles.dot} ${styles.warning}`} title="Needs Attention" />
         </div>
       </div>
     </section>
