@@ -82,19 +82,6 @@
   background-color: #f97a00;
 }
 
-/* Status modifiers (optional for styling purposes) */
-.critical {
-  border-left-color: #cb0404;
-}
-
-.warning {
-  border-left-color: #7ae2cf;
-}
-
-.healthy {
-  border-left-color: #f97a00;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .card {
